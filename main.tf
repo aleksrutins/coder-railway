@@ -153,3 +153,10 @@ resource "railway_variable" "start_script" {
 	name = "START_SCRIPT"
 	value = coder_agent.dev.init_script
 }
+
+resource "railway_variable" "port" {
+	service_id = railway_service.code_server.id
+	environment_id = var.railway_environment
+	name = "PORT"
+	value = "13337"
+}
