@@ -18,6 +18,4 @@ USER ${USER}
 WORKDIR /home/${USER}
 
 ARG START_SCRIPT
-CMD "/bin/bash -c 'cat > ~/start-coder <<EOF \n\
-${START_SCRIPT} \n\
-EOF && bash ~/start-coder'"
+CMD ${START_SCRIPT}
