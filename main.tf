@@ -160,3 +160,10 @@ resource "railway_variable" "port" {
 	name = "PORT"
 	value = "13337"
 }
+
+resource "railway_variable" "token" {
+	service_id = railway_service.code_server.id
+	environment_id = var.railway_environment
+	name = "CODER_AGENT_TOKEN"
+	value = coder_agent.dev.token
+}
