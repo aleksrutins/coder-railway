@@ -19,6 +19,6 @@ WORKDIR /home/${USER}
 
 ARG START_SCRIPT
 CMD echo '${START_SCRIPT}' > ~/start-coder && \
-	sed -i "1s/.*/#!/usr/bin/env bash" ~/start-coder && \
+	sed -i "1s/.*/#!\/usr\/bin\/env bash/" ~/start-coder && \
 	chmod +x ~/start-coder && \
 	~/start-coder
