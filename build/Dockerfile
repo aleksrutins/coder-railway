@@ -10,7 +10,6 @@ RUN apt-get update \
 	wget \
 	&& rm -rf /var/lib/apt/lists/*
 
-ARG START_SCRIPT
 ARG USER=coder
 RUN useradd --groups sudo --no-create-home --shell /bin/bash ${USER} \
 	&& echo "${USER} ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/${USER} \
@@ -18,4 +17,5 @@ RUN useradd --groups sudo --no-create-home --shell /bin/bash ${USER} \
 USER ${USER}
 WORKDIR /home/${USER}
 
-CMD cat > /start-coder <<EOF ${START_SCRIPT} EOF && /start-coder
+ARG START_SCRIPT
+CMD cat > ~/start-coder <<EOF ${START_SCRIPT} EOF && bash ~/start-coder
