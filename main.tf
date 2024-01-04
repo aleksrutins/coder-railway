@@ -144,7 +144,6 @@ resource "railway_service" "code_server" {
 	name = "coder-${data.coder_workspace.me.owner}-${data.coder_workspace.me.name}"
 	project_id = var.railway_project
 	source_image = "ghcr.io/aleksrutins/coder-railway"
-	root_directory = "build"
 }
 
 resource "railway_variable" "start_script" {
