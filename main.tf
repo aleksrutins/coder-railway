@@ -151,7 +151,7 @@ resource "railway_variable" "start_script" {
 	service_id = railway_service.code_server.id
 	environment_id = var.railway_environment
 	name = "START_SCRIPT"
-	value = "{\n${coder_agent.dev.init_script}\n}"
+	value = base64encode(coder_agent.dev.init_script)
 }
 
 resource "railway_variable" "port" {
