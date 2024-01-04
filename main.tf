@@ -143,7 +143,7 @@ resource "coder_app" "code-server" {
 resource "railway_service" "code_server" {
 	name = "coder-${data.coder_workspace.me.owner}-${data.coder_workspace.me.name}"
 	project_id = var.railway_project
-	source_image = "ghcr.io/aleksrutins/coder-railway"
+	source_image = "ghcr.io/aleksrutins/coder-railway:master"
 }
 
 resource "railway_variable" "start_script" {
