@@ -143,7 +143,7 @@ resource "coder_app" "code-server" {
 resource "railway_service" "code_server" {
 	name = "coder-${data.coder_workspace.me.owner}-${data.coder_workspace.me.name}"
 	project_id = var.railway_project
-	source_repo = "aleksrutins/coder-railway"
+	source_repo = "https://github.com/aleksrutins/coder-railway"
 	root_directory = "build"
 }
 
